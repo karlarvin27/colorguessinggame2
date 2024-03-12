@@ -21,6 +21,9 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
+    - name: Verify the presence of gradlew
+      run: ls -la AndroidStudioProjects/DoronilaColorGuessingGame/gradlew
+
     - name: Change directory to project root
       run: cd AndroidStudioProjects/DoronilaColorGuessingGame/
 
