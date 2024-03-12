@@ -19,11 +19,11 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: gradle
-
+      
     - name: Change directory to project root
       run: cd AndroidStudioProjects/DoronilaColorGuessingGame/
-    - name: Grant execute permission for gradlew
-      run: chmod +x AndroidStudioProjects/DoronilaColorGuessingGame/gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
 
+    - name: Use Gradle wrapper to build
+      run: |
+          chmod +x gradlew
+          ./gradlew build
