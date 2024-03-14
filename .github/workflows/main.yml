@@ -1,0 +1,17 @@
+name: Update Remote URL
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  update-remote:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Update remote URL
+        run: git remote set-url origin https://github.com/karlarvin27/colorguessinggame2.git
