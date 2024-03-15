@@ -1,19 +1,9 @@
-# Android
-# Build your Android project with Gradle.
-# Add steps that test, sign, and distribute the APK, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/android
+jobs:
+- job: Job1
+  steps:
+  - script: echo Job 1
 
-trigger:
-  branches:
-    include:
-      - master
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-  - checkout: self
-
-  - script: |
-      git remote set-url origin https://github.com/karlarvin27/colorguessinggame2.git
-    displayName: 'Update remote URL'
+- job: Job2
+  dependsOn: Job1
+  steps:
+  - script: echo Job 2
